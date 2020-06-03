@@ -73,3 +73,7 @@ workflows:
       - build_client_image:
           requires:
             - client_tests
+            filters:
+              branches:
+                only:
+                   master
