@@ -37,13 +37,13 @@ jobs:
       - setup_remote_docker	  
       - run:
           name: build server image
-          command: docker build -t karen2035/nodelab:serv0.1 -f server/Dockerfile server
+          command: docker build -t karen2035/server:0.1 -f server/Dockerfile server
       - run:
           name: docker login
           command: docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
       - run:
           name: docker push
-          command: docker push karen2035/nodelab:serv0.1
+          command: docker push karen2035/server:0.1
   build_client_image:
     working_directory: ~/app/
     docker:
@@ -53,13 +53,13 @@ jobs:
       - setup_remote_docker	  
       - run:
           name: build client image
-          command: docker build -t karen2035/nodelab:client0.1 -f client/Dockerfile client
+          command: docker build -t karen2035/client:0.1 -f client/Dockerfile client
       - run:
           name: docker login
           command: docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
       - run:
           name: docker push
-          command: docker push docker.io/karen2035/nodelab:client0.1
+          command: docker push karen2035/client:0.1
 
 workflows:
   version: 2
