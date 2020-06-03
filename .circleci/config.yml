@@ -69,11 +69,15 @@ workflows:
       - client_tests      
       - build_server_image:
           requires:
-            - server_tests
+          - server_tests
+          filters:
+              branches:
+                only:
+                  - master
       - build_client_image:
           requires:
-            - client_tests
-            filters:
+          - client_tests
+          filters:
               branches:
                 only:
                   - master
