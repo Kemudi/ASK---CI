@@ -73,11 +73,11 @@ workflows:
           filters:
               branches:
                 only:
-                   - inna
+                   - master
       - build_client_image:
           requires:
           - client_tests
           filters:
               branches:
                 only:
-                  - inna
+                  - master
