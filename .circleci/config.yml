@@ -25,8 +25,8 @@ workflows:
                                   - dev
                      - deploy:
                          requires:
-                           - build-and-test
-                             filters:
+                         - build-and-test
+                         filters:
                                branches:
                                  only:
                                   - master
