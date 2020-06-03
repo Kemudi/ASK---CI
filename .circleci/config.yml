@@ -15,5 +15,5 @@ workflows:
                      - build-and-test:
                           filters:
                              branches:
-                                ignore:
-                                   - dev
+                                  only:
+                                     - master
