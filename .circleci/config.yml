@@ -16,13 +16,13 @@ jobs:
              - checkout
              - heroku/deploy-via-git
 workflows:
-          build-and-test:
+          build-test-and-deploy:
                  jobs:
                      - build-and-test:
                           filters:
                              branches:
-                                  only:
-                                     - master
+                                  ignore:
+                                     - dev
                      - deploy:
                          requires:
                            - build-and-test
