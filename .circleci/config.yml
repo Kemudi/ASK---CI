@@ -22,11 +22,11 @@ workflows:
                           filters:
                              branches:
                                   ignore:
-                                     - dev
+                                  - dev
                      - deploy:
                          requires:
                            - build-and-test
-                           filters:
+                             filters:
                               branches:
                                   only:
                                     - master
